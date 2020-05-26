@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"                          // haaaaaaaaaaam
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/dice_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/dice_1" />                                     // haaaaam
+
+    <Button
+        android:id="@+id/roll_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="roll"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
+    />
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.example.diceroller
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val x:Button = findViewById(R.id.roll_button)
+        x.setOnClickListener
+	{
+            Toast.makeText(this,"lalloo",Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+package com.example.diceroller
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity()
+{
+    val n =1
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val x:Button = findViewById(R.id.roll_button)
+        x.setOnClickListener{
+            rolldice()
+        }
+    }
+
+    private fun rolldice() {
+        val y:TextView = findViewById(R.id.result)
+        y.text="done clicked"
+    }
+}
+
+
+
+
+
+
+
+
+package com.example.diceroller
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity()
+{
+    var n = 1
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val x:Button = findViewById(R.id.roll_button)
+        x.setOnClickListener{
+            rolldice()
+        }
+    }
+
+    private fun rolldice() {
+        val y:TextView = findViewById(R.id.result)
+        n=n+1
+        y.text=n.toString()
+
+    }
+}
+
+
+
+
+
+
+
+
+val randomnumber = Random.nextInt(6)+1
+y.text=randomnumber .toString()
+
+
+
+
+
+
+
+
+
+package com.example.diceroller
+
+import android.media.Image
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import kotlin.random.Random
+
+class MainActivity : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val x:Button = findViewById(R.id.roll_button)
+        x.setOnClickListener{
+            rolldice()
+        }
+    }
+
+    private fun rolldice() {
+        val y:ImageView = findViewById(R.id.dice_image)
+        val randomnumber = Random.nextInt(6)+1
+        val z = when(randomnumber)
+        {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        y.setImageResource(z)
+        Toast.makeText(this,randomnumber.toString(),Toast.LENGTH_SHORT).show()
+
+    }
+}
+
+
+
+
+
+
+
+
+
+lateinit var diceImage: ImageView
+
+
+
+
+
+
+
+
